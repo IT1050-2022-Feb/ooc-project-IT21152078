@@ -1,0 +1,190 @@
+//IT21072888-Samarakoon S.M.S.C
+
+#include"DietPlan.h"
+#Include<cstring>
+using namespace std;
+
+DietPlan::DietPlan()
+{
+    strcpy(did, "");
+    strcpy(dType, "");
+    dPrice = 0;
+}
+
+DietPlan::DietPlan(char ID[], char Type[], double Price)
+{
+    strcpy(did,ID);
+    strcpy(dType, Type);
+    dPrice = Price;
+}
+
+void DietPlan::setDietPlanDetails(char ID[], char Type[], double Price)
+{
+    cout << "-----------Diet Plan Details-----------" << endl;
+    cout << "Diet Plan Id : ";
+    cin >> did;
+    cout << "Diet Plan Type : ";
+    cin >> dType;
+    cout << "Diet Plan Price : ";
+    cin >> dPrice;
+}
+
+void DietPlan::displayDietPlanDetails()
+{
+    cout <<  "ID of the Diet Plan    : " << did << endl;
+    cout << "Type of the Diet Plan   : " << dType << endl;
+    cout << "Price of the Diet Plan  : " << dPrice << endl;
+}
+
+void DietPlan::updateDietPlanDetails()
+{
+    cout << "Enter New Diet Plan Id    : ";
+    cin >> did;
+    cout << "Enter New Diet Plan Type  : ";
+    cin >> dType;
+    cout << "Enter New Diet Plan Price : ";
+    cin >> dPrice;
+}
+
+
+
+
+//IT21072888-Samarakoon S.M.S.C
+
+class DietPlan //Creating a DietPlan class
+{
+//Declaring private propeties
+private:
+    char did[5];
+    char dType[20];
+    double dPrice;
+
+//Declare public method
+public:
+    DietPlan(); //Default constructor
+    DietPlan(char ID[], char Type[], double Price);
+    void setDietPlanDetails(char ID[], char Type[], double Price);
+    //Display diet plan details
+    void displayDietPlanDetails();
+    void updateDietPlanDetails();
+   
+    ~DietPlan(); //Destructor
+};
+
+
+
+
+
+
+
+//IT21072888-Samarakoon S.M.S.C
+
+#include"Feedback.h"
+#include<cstring>
+using namespace std;
+
+Feedback::Feedback(){
+feedbackID = 0;
+strcpy(description,"");
+}
+Feedback::Feedback(int f_ID,char des[])
+{
+feedbackID = f_ID;
+strcpy(description, des);
+
+}
+
+void Feedback::displayFeedback()
+{
+cout << "Feedback ID  : " << feedbackID << endl;
+cout << "Description  : " << description << endl;
+}
+
+
+
+
+
+//IT21072888-Samarakoon S.M.S.C
+
+//Feedback class
+class Feedback
+{
+private :
+int feedbackID;
+char description[50];
+
+ 
+public :
+Feedback();
+Feedback(int f_ID,char des[]);
+void displayFeedback();
+~Feedback();
+ 
+};
+
+
+//IT21072888-Samarakoon S.M.S.C
+
+#include"Payment.h"
+#include<cstring>
+using namespace std;
+
+Payment::Payment()
+{
+strcpy(paymentID, "");
+amount = 0;
+strcpy(type, "");
+}
+
+Payment::Payment(char rPaymentID[], double rAmount, char rType[])
+{
+strcpy(paymentID, rPaymentID);
+amount = rAmount;
+strcpy(type, rType);
+}
+
+void Payment::setPaymentDetails(char RPaymentID[], double RAmount, char RType[])
+{
+strcpy(paymentID, RPaymentID);
+amount = RAmount;
+strcpy(type, RType);
+}
+
+void Payment::validatePayment()
+{
+int length;
+length = strlen(paymentID);
+if (length > 1 && length <= 10)
+{
+cout << "Valid Payment ID" << endl;
+}
+else
+{
+cout << "Sorry! Can't Validate details" << endl;
+}
+}
+
+double Payment::calPayment()
+{
+
+}
+
+//IT21072888-Samarakoon S.M.S.C
+
+//Payment class
+class Payment
+{
+private:
+char paymentID[10];
+double amount;
+char type[20];
+
+public:
+Payment();
+Payment(char rPaymentID[], double rAmount, char rType[]);
+void setPaymentDetails(char RPaymentID[], double RAmount, char RType[]);
+void validatePayment();
+double calPayment();
+
+~Payment();
+};
